@@ -6,15 +6,23 @@ from a string of numbers in the correct phone order
 emulates telephone string operations
 """
 
-"""
-@def letterCombinations takes in one parameter s
-creates a dictionary of numbers as they appear on a
-keypad 2-9 as keys and a list of values those digits represent
-as the value
-"""
+def perm_maker(dct, digits):
+   res = ''
+   
+
+
+
+
+
 def letterCombinations(s):
-    if len(s) == 0:
-        return []
+    """
+    @:param letterCombinations takes in a string s
+    and passes a dictionary and list of keys constructed
+    from the string
+    """
+    if s is None:
+        return 0
+
     number_dict = {
         '2': ['a', 'b', 'c'],
         '3': ['d', 'e', 'f'],
@@ -26,13 +34,13 @@ def letterCombinations(s):
         '9': ['w','x','y','z'],
         '0': [' '],
         '*': ['+'],
-        '#': ['']}
-    if len(s) == 1:
-        return number_dict.get(s)
-    string = []
-    for c in s:
-        string.append(c)
+        '#': ['']
+    }
 
+    if len(s) == 1:
+        return "".join(e for e in number_dict.get(s))
+    digis = [int(i) for i in s]
+    return perm_maker(number_dict, digis)
 
 
 
