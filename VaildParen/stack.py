@@ -29,3 +29,9 @@ class Stack:
     def size(self):
         """Checks and returns the size of the Stack """
         return len(self.items)
+
+    def print_stack(self):
+        """Prints the Stack"""
+        print [i for i in self.items]
+
+s = Stack()
